@@ -6,7 +6,9 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
+# User API - Laravel CRUD Project
 
+This project is a RESTful API built using Laravel to perform CRUD operations on users. It demonstrates backend development, API creation, and database integration.
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
@@ -62,3 +64,50 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+## ⚙️ Installation & Setup (User API Project)
+
+Follow these steps to run this project locally:
+
+### 1. Clone the Repository
+git clone https://github.com/madarianusha/user-api.git  
+cd user-api
+
+### 2. Install Dependencies
+composer install
+
+### 3. Setup Environment File
+cp .env.example .env
+
+### 4. Generate Application Key
+php artisan key:generate
+
+### 5. Configure Database
+Open `.env` file and update:
+
+DB_DATABASE=your_database_name  
+DB_USERNAME=root  
+DB_PASSWORD=
+
+Make sure your database is created in MySQL (XAMPP/phpMyAdmin).
+
+### 6. Run Migrations
+php artisan migrate
+
+### 7. Start the Server
+php artisan serve
+
+Application runs at:  
+http://127.0.0.1:8000
+
+---
+
+## 🧪 API Testing
+
+You can test API endpoints using Postman:
+
+- GET /api/users  
+- POST /api/users  
+- PUT /api/users/{id}  
+- DELETE /api/users/{id}
