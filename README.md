@@ -66,48 +66,58 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 ---
 
-## ⚙️ Installation & Setup (User API Project)
+Laravel CRUD API using MySQL (XAMPP)
+📌 Project Overview
 
-Follow these steps to run this project locally:
+This project demonstrates CRUD (Create, Read, Update, Delete) operations using the Laravel framework connected to a MySQL database. The API is tested using Postman.
 
-### 1. Clone the Repository
-git clone https://github.com/madarianusha/user-api.git  
+### Requirements
+XAMPP
+Composer
+PHP (via XAMPP)
+Postman
+### Installation & Setup (Using Console)
+Start XAMPP
+Start MySQL
+### 2. Navigate to htdocs
+cd C:\xampp\htdocs
+### 3. Create Laravel Project
+composer create-project laravel/laravel user-api "8.*"
+#### 4. Move into Project Folder
 cd user-api
-
-### 2. Install Dependencies
-composer install
-
-### 3. Setup Environment File
-cp .env.example .env
-
-### 4. Generate Application Key
-php artisan key:generate
-
 ### 5. Configure Database
-Open `.env` file and update:
+Open .env file
+Set database name, username, and password to match your MySQL (csci6040_study)
+### 6. Clear Cache
+php artisan config:clear
+php artisan cache:clear
+### 7. Create Controller
+php artisan make:controller UserController
+#### 8. Configure Model
+Open User model
+Set table name and fillable fields
+Disable timestamps if not present
+### 9. Implement CRUD Logic
+Add functions for:
+Fetch all users
+Create user
+Fetch single user
+Update user
+Delete user
+### 10. Define API Routes
+Open routes/api.php
+Map GET, POST, PUT, DELETE methods to controller functions
+### 11. Run Laravel Server
+php artisan serve --port=8001
+### 12. Verify Routes
+php artisan route:list
 
-DB_DATABASE=your_database_name  
-DB_USERNAME=root  
-DB_PASSWORD=
+### API Testing (Postman)
+Use the following endpoints:
+GET → retrieve all users
+GET → retrieve single user
+POST → create user
+PUT → update user
+DELETE → delete user
 
-Make sure your database is created in MySQL (XAMPP/phpMyAdmin).
-
-### 6. Run Migrations
-php artisan migrate
-
-### 7. Start the Server
-php artisan serve
-
-Application runs at:  
-http://127.0.0.1:8000
-
----
-
-## 🧪 API Testing
-
-You can test API endpoints using Postman:
-
-- GET /api/users  
-- POST /api/users  
-- PUT /api/users/{id}  
-- DELETE /api/users/{id}
+Test all endpoints using Postman and verify responses.
